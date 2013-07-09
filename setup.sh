@@ -29,6 +29,8 @@ sudo apt-get install -y rlwrap
 
 # Install Heroku CLI tools
 wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+# Generate SSH keys
+ssh-keygen -t rsa
 
 # git pull and install dotfiles as well
 cd $HOME
