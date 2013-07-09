@@ -22,18 +22,23 @@ sudo apt-get install -y rlwrap
 
 # Install emacs24
 # https://launchpad.net/~cassou/+archive/emacs
-sudo apt-add-repository -y ppa:cassou/emacs
-sudo apt-get update
-sudo apt-get install -y emacs24 emacs24-el emacs24-common-non-dfsg
+#sudo apt-add-repository -y ppa:cassou/emacs
+#sudo apt-get update
+#sudo apt-get install -y emacs24 emacs24-el emacs24-common-non-dfsg
+
+# Install Heroku CLI tools
+wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 
 # git pull and install dotfiles as well
 cd $HOME
 if [ -d ./dotfiles/ ]; then
     mv dotfiles dotfiles.old
 fi
-if [ -d .emacs.d/ ]; then
-    mv .emacs.d .emacs.d~
-fi
+#if [ -d .emacs.d/ ]; then
+#    mv .emacs.d .emacs.d~
+#fi
+
+# Copy dotfiles over
 git clone https://github.com/holman/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 script/bootstrap
